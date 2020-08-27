@@ -36,3 +36,12 @@ Start server back plan
     $ symfony console make:twig
 
     --> src/Twig/AppExtension.php
+
+
+
+
+
+
+
+symfony console doctrine:migrations:migrate
+symfony console doctrine:migrations:migrate prev
