@@ -1,0 +1,38 @@
+Start server back plan
+
+1. symfony serve -d / symfony open:local
+
+2. Create PinsController
+    $ symfony console make:controller pins
+
+3. Mysql connect
+    $  mysql -u fumu -p
+
+    $ SHOW DATABASES;
+
+    $ use pin_dev
+
+    $ show tables;
+
+    $ describe pins;
+
+    $ SELECT * FROM pins;
+
+
+
+
+
+4. Create database
+    $ symfony console doctrine:database:create  | symfony console doctrine:database:drop --force
+
+5. Make migration
+    $ symfony console make:migration
+
+
+6. install theofidry/psysh-bundle
+    $ composer require theofidry/psysh-bundle --dev
+
+7. Create function twig
+    $ symfony console make:twig
+
+    --> src/Twig/AppExtension.php
