@@ -1,6 +1,6 @@
 <?php
 
-namespace APP\Entity\Traits;
+namespace App\Entity\Traits;
 
 trait Timestampable
 {
@@ -44,7 +44,7 @@ trait Timestampable
      */
     public function updateTimestamps()
     {
-        if ($this->createdAt() === null){
+        if ($this->createdAt=== null){
             $this->setCreatedAt(new \DateTimeImmutable);
         }
 

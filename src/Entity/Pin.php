@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-use APP\Entity\Traits\Timestampable;
+use App\Entity\Traits\Timestampable;
 use App\Repository\PinRepository;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -62,5 +62,6 @@ class Pin
 
         return $this;
     }
+
 
 }
