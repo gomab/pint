@@ -40,7 +40,10 @@ Start server back plan
 
 
 
+--------------------------------------------------------------------------
 
+make form
+    $ symfony console make:form
 
 
 symfony console doctrine:migrations:migrate
