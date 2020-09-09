@@ -46,7 +46,7 @@ class PinsController extends AbstractController
     }
 
     /**
-     * @Route("/pins/create", name="app_pins_create", methods={"GET", "POST"})
+     * @Route("/pins/create", name="app_pins_create", methods={"GET", "POST"}, priority="1")
      * @param Request $request
      * @return Response
      */
