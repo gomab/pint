@@ -52,3 +52,11 @@ symfony console doctrine:migrations:migrate prev
 
 
  composer recipes
+
+ composer require twig/string-extra
+
+
+ _________________
+ time ago
+
+ composer require knplabs/knp-time-bundle
