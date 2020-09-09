@@ -48,3 +48,7 @@ make form
 
 symfony console doctrine:migrations:migrate
 symfony console doctrine:migrations:migrate prev
+
+
+
+ composer recipes
