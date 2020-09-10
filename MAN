@@ -60,3 +60,23 @@ symfony console doctrine:migrations:migrate prev
  time ago
 
  composer require knplabs/knp-time-bundle
+
+ ___________________
+ Encore
+
+ composer req encore
+
+npm i
+
+npm run dev
+
+EN prod
+npm run build
+
+
+npm run watch
+
+Install bootstrap
+npm i bootstrap --dev
+npm i bootstrap --save-dev
+npm i jquery popper.js -D
