@@ -80,3 +80,10 @@ Install bootstrap
 npm i bootstrap --dev
 npm i bootstrap --save-dev
 npm i jquery popper.js -D
+
+
+
+-----------------------
+Upload image
+https://packagist.org/packages/vich/uploader-bundle
+
