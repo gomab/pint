@@ -12,6 +12,22 @@ class PinType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+
+//        $pin = $options['data'];
+//
+////        dd($pin && $pin->getId());
+//
+//        $isEdit = $options['method'] === 'PUT';
+//        $imageFileConstraints = [];
+//
+//        if($isEdit){
+//            $imageFileConstraints[] =
+//        }
+//
+//        if (($options)){
+//
+//        }
+
         $builder
             ->add('title')
             ->add('description')
@@ -23,7 +39,7 @@ class PinType extends AbstractType
                 'download_label' => 'Download',
                 'download_uri' => true,
 //                'image_uri' => true,
-//                'imagine_pattern' => '...',
+                'imagine_pattern' => 'squared_thumbnail_small',
 //                'asset_helper' => true,
             ])
 //            ->add('createdAt')
