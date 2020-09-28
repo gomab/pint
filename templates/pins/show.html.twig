@@ -8,21 +8,22 @@
         <div class="col-md-8 mx-auto">
             <article class="pin bg-white rounded shadow">
                 <div class="mw-100 rounded-top overflow-hidden">
-                    <a href="{{ path('app_pins_show', {id: pin.id}) }}">
-                        <img src="{{ (pin.imageName ?  vich_uploader_asset(pin) : asset('build/images/default.jpg')) | imagine_filter('squared_thumbnail_medium') }}" alt="{{ pin.title }}" class="w-100">
-                    </a>
+
+                    <img src="{{ (pin.imageName ?  vich_uploader_asset(pin) : asset('build/images/default.jpg')) | imagine_filter('squared_thumbnail_medium') }}" alt="{{ pin.title }}" class="w-100">
+
                 </div>
-                <h1 class="pl-3 pt-3 h5"><a class="text-secondary text-decoration-none" href="{{ path('app_pins_show', {id: pin.id}) }}">{{ pin.title }}</a></h1>
-                {#                            <p>{{  pin.description | u.truncate(10, '...', false)}}</p>#}
-
-                <p class="pl-3 pb-03text-muted">
-                    <small>Submitted by <strong>{{ pin.user.fullName }}</strong> |
-                        <time datetime="{{ pin.createdAt|date('Y-m-d H:i:s') }}">{{ pin.createdAt|ago }}</time>
 
 
-                    </small></p>
+               <div class="p-3">
+                   <h1 class="h5"><span class="text-secondary text-decoration-none">{{ pin.title }}</span></h1>
+                   {#                            <p>{{  pin.description | u.truncate(10, '...', false)}}</p>#}
 
-                <p class="pl-3 pb-3">{{ pin.description }}</p>
+                   <p class="text-muted">
+                       <small>Submitted by <strong>{{ pin.user.fullName }}</strong> |
+                           <time datetime="{{ pin.createdAt|date('Y-m-d H:i:s') }}">{{ pin.createdAt|ago }}</time>
+                       </small></p>
+                   <p class="text-break">{{ pin.description }}</p>
+               </div>
             </article>
 
             <hr>

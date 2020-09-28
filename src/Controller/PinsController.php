@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Pin;
 use App\Form\PinType;
 use App\Repository\PinRepository;
+use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -50,7 +51,7 @@ class PinsController extends AbstractController
      * @param Request $request
      * @return Response
      */
-    public function create(Request $request, EntityManagerInterface $em): Response
+    public function create(Request $request, EntityManagerInterface $em, UserRepository $userRepository): Response
     {
         $pin = new Pin();
 
@@ -59,6 +60,8 @@ class PinsController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
+            $janeDoe = $userRepository->findOneBy(['email' => 'janedoe@thellema.com']);
+            $pin->setUser($janeDoe);
             $em->persist($pin);
             $em->flush();
 
