@@ -98,3 +98,13 @@ __________________
 MAJ SYmfony bundle
 
 composer recipes
+
+
+______________________
+
+USER
+
+1. $ symfony console make:user -Yes for all)
+
+2. add fields
+    $ symfony console make:entity User
