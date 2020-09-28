@@ -108,3 +108,76 @@ USER
 
 2. add fields
     $ symfony console make:entity User
+
+3. encode password
+    $ symfony console security:encode-password
+
+
+
+______________________________________________
+
+
+psysh
+
+
+
+ pint git:(master) symfony console psysh
+<aside>Psy Shell v0.10.4 (PHP 7.4.5 — cli) by Justin Hileman</aside>
+>>> use App\Entity\User
+>>> use App\Entity\User;
+>>> $user1 = new User;
+=> App\Entity\User {#2639}
+>>> dum($user1)
+PHP Fatal error:  Call to undefined function dum() in Psy Shell code on line 1
+>>> dump($user1)
+App\Entity\User {#2639
+  -id: null
+  -firstName: null
+  -lastName: null
+  -email: null
+  -roles: []
+  -password: null
+  -createdAt: null
+  -updatedAt: null
+}
+=> App\Entity\User {#2639}
+>>> $user1->setFirstName('John')
+=> App\Entity\User {#2639}
+>>> $user1->setLastName('Doe')
+=> App\Entity\User {#2639}
+>>> $user1->setEmail('johndoe@egoiomab.com')
+=> App\Entity\User {#2639}
+>>> dump($user1)
+App\Entity\User {#2639
+  -id: null
+  -firstName: "John"
+  -lastName: "Doe"
+  -email: "johndoe@egoiomab.com"
+  -roles: []
+  -password: null
+  -createdAt: null
+  -updatedAt: null
+}
+=> App\Entity\User {#2639}
+>>> $user1->setPassword(' $argon2id$v=19$m=65536,t=4,p=1$k02J4ta2gGPoPJgMasOIYQ$/F8a5XJwwqom8ViVY8fAEUFTwx2djA3xfLX7a5gkNnE')
+=> App\Entity\User {#2639}
+>>> dump($user1)
+App\Entity\User {#2639
+  -id: null
+  -firstName: "John"
+  -lastName: "Doe"
+  -email: "johndoe@egoiomab.com"
+  -roles: []
+  -password: " $argon2id$v=19$m=65536,t=4,p=1$k02J4ta2gGPoPJgMasOIYQ$/F8a5XJwwqom8ViVY8fAEUFTwx2djA3xfLX7a5gkNnE"
+  -createdAt: null
+  -updatedAt: null
+}
+=> App\Entity\User {#2639}
+>>> $em = $container->get('doctrine')->getManager();
+=> Doctrine\ORM\EntityManager {#2730}
+>>> $em->persist($user1);
+=> null
+>>> $em->flush()
+=> null
+>>>
+
