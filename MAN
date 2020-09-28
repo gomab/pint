@@ -92,3 +92,9 @@ https://packagist.org/packages/vich/uploader-bundle
 A voir .....
 
 Symfony Messenger
+
+
+__________________
+MAJ SYmfony bundle
+
+composer recipes
