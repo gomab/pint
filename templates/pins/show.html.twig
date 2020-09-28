@@ -16,7 +16,7 @@
                 {#                            <p>{{  pin.description | u.truncate(10, '...', false)}}</p>#}
 
                 <p class="pl-3 pb-03text-muted">
-                    <small>Submitted by [OWNER FULL NAME] |
+                    <small>Submitted by <strong>{{ pin.user.fullName }}</strong> |
                         <time datetime="{{ pin.createdAt|date('Y-m-d H:i:s') }}">{{ pin.createdAt|ago }}</time>
 
 

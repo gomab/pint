@@ -114,11 +114,32 @@ USER
 
 
 
+relation: manytoOne
+ symfony console make:entity Pin
+
+
+
+php bin/console doctrine:database:drop --force
+
+php bin/console doctrine:database:create
+
+ php bin/console make:migration
+
+------------
+Git
+
+git commit -m "message" --amend
+
+git status
+git add -p
+
 ______________________________________________
 
 
 psysh
 
+$p1->getUser()->getFirstName()
+$user2->getPins()->count() / count($user2->getPins)
 
 
  pint git:(master) symfony console psysh
