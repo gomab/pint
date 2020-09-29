@@ -2,6 +2,7 @@
 
 namespace App\Twig;
 
+use Symfony\Component\Security\Core\Security;
 use Twig\Extension\AbstractExtension;
 //use Twig\TwigFilter;
 use Twig\TwigFunction;
@@ -18,6 +19,14 @@ class AppExtension extends AbstractExtension
 //        ];
 //    }
 
+    private $security;
+
+    public function __construct(Security $security)
+    {
+        $this->security = $security;
+
+    }
+
     public function getFunctions(): array
     {
         return [
@@ -27,6 +36,8 @@ class AppExtension extends AbstractExtension
 
     public function pluralize(int $count, string $singular, ?string $plural= null): string
     {
+        //dd($this->security->getUser());
+
         $plural = $plural ?? $singular . 's';
 //        $plural ??= $singular . 's';
         $str = $count === 1 ? $singular : $plural;
