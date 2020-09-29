@@ -118,6 +118,8 @@ relation: manytoOne
  symfony console make:entity Pin
 
 
+5. symfony console make:auth  (login form auth)
+
 
 php bin/console doctrine:database:drop --force
 
@@ -133,6 +135,9 @@ git commit -m "message" --amend
 git status
 git add -p
 
+
+$this->getUser() / user connecté au niveau du controller
+$this->app.user() / user connecté au niveau de la vue, twig
 ______________________________________________
 
 
